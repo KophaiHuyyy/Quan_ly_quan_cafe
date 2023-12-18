@@ -1,0 +1,10 @@
+D:\Work_space\C#\Quan_Cafe\Flogin\bin\Debug\Flogin.exe.config
+D:\Work_space\C#\Quan_Cafe\Flogin\bin\Debug\Flogin.exe
+D:\Work_space\C#\Quan_Cafe\Flogin\bin\Debug\Flogin.pdb
+D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.csproj.AssemblyReference.cache
+D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.Properties.Resources.resources
+D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.csproj.GenerateResource.cache
+D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.csproj.CoreCompileInputs.cache
+D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.exe
+D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.pdb
+D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.Login.resources

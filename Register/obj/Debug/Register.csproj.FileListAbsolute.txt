@@ -1,0 +1,10 @@
+D:\Work_space\C#\Quan_Cafe\Register\bin\Debug\Register.exe.config
+D:\Work_space\C#\Quan_Cafe\Register\bin\Debug\Register.exe
+D:\Work_space\C#\Quan_Cafe\Register\bin\Debug\Register.pdb
+D:\Work_space\C#\Quan_Cafe\Register\obj\Debug\Register.csproj.AssemblyReference.cache
+D:\Work_space\C#\Quan_Cafe\Register\obj\Debug\Register.Form1.resources
+D:\Work_space\C#\Quan_Cafe\Register\obj\Debug\Register.Properties.Resources.resources
+D:\Work_space\C#\Quan_Cafe\Register\obj\Debug\Register.csproj.GenerateResource.cache
+D:\Work_space\C#\Quan_Cafe\Register\obj\Debug\Register.csproj.CoreCompileInputs.cache
+D:\Work_space\C#\Quan_Cafe\Register\obj\Debug\Register.exe
+D:\Work_space\C#\Quan_Cafe\Register\obj\Debug\Register.pdb

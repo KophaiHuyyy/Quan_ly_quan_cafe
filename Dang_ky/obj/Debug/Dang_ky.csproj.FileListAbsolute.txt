@@ -1,0 +1,10 @@
+D:\Work_space\C#\Quan_Cafe\Dang_ky\bin\Debug\Dang_ky.exe.config
+D:\Work_space\C#\Quan_Cafe\Dang_ky\bin\Debug\Dang_ky.exe
+D:\Work_space\C#\Quan_Cafe\Dang_ky\bin\Debug\Dang_ky.pdb
+D:\Work_space\C#\Quan_Cafe\Dang_ky\obj\Debug\Dang_ky.csproj.AssemblyReference.cache
+D:\Work_space\C#\Quan_Cafe\Dang_ky\obj\Debug\Dang_ky.frmRegister.resources
+D:\Work_space\C#\Quan_Cafe\Dang_ky\obj\Debug\Dang_ky.Properties.Resources.resources
+D:\Work_space\C#\Quan_Cafe\Dang_ky\obj\Debug\Dang_ky.csproj.GenerateResource.cache
+D:\Work_space\C#\Quan_Cafe\Dang_ky\obj\Debug\Dang_ky.csproj.CoreCompileInputs.cache
+D:\Work_space\C#\Quan_Cafe\Dang_ky\obj\Debug\Dang_ky.exe
+D:\Work_space\C#\Quan_Cafe\Dang_ky\obj\Debug\Dang_ky.pdb
