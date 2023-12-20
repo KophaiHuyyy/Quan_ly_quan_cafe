@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+
 
 namespace Flogin
 {
@@ -39,40 +42,67 @@ namespace Flogin
             {
                 MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu");
             }
-            try
+            else if (!IsValidEmail(email))
             {
-                string query = "SELECT COUNT(*) FROM nguoidung WHERE email = @email AND password = @password";
-                SqlCommand cmd = new SqlCommand(query, sqlCon);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@password", password);
+                MessageBox.Show("Vui lòng nhập một địa chỉ email hợp lệ (ví dụ: user@gmail.com)");
+            }
+            else
+            {
+                try
+                {
+                    string query = "SELECT COUNT(*) FROM nguoidung WHERE email = @email AND password = @password";
+                    SqlCommand cmd = new SqlCommand(query, sqlCon);
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@password", password);
 
-                int userCount = (int)cmd.ExecuteScalar();
-                // userCount chứa giá trị trả về từ câu lệnh SELECT
-                if (userCount > 0)
-                {
-                    MessageBox.Show("Đăng nhập thành công!");
-                    Fmain f = new Fmain();
-                    this.Hide();
-                    f.ShowDialog();
-                    this.Show();
+                    int userCount = (int)cmd.ExecuteScalar();
+                    // userCount chứa giá trị trả về từ câu lệnh SELECT
+                    if (userCount > 0)
+                    {
+                        MessageBox.Show("Đăng nhập thành công!");
+                        Fmain f = new Fmain();
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đăng nhập không thành công. Kiểm tra lại thông tin đăng nhập.");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Đăng nhập không thành công. Kiểm tra lại thông tin đăng nhập.");
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private bool IsValidEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._%+-]+@gmail\.com$";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(email);
+        }
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             fRegister r = new fRegister();
             this.Hide();
             r.ShowDialog();
             this.Show();
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

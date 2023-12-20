@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+
 
 namespace Flogin
 {
@@ -41,33 +43,45 @@ namespace Flogin
             {
                 MessageBox.Show("Mật khẩu và Nhập lại mật khẩu không khớp!");
             }
-
-            try
+            else if (!IsValidEmail(email))
             {
-                string query = "INSERT INTO nguoidung (name, sdt, email, password) VALUES (@name, @sdt, @email, @password)";
-                SqlCommand cmd = new SqlCommand(query, sqlCon);
-                cmd.Parameters.AddWithValue("@name", name);
-                cmd.Parameters.AddWithValue("@sdt", sdt);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@password", password);
-
-
-                int rowAffected = cmd.ExecuteNonQuery();
-                if (rowAffected > 0)
-                {
-                    MessageBox.Show("Đăng ký thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Đăng ký thất bại");
-                }
+                MessageBox.Show("Vui lòng nhập một địa chỉ email hợp lệ (ví dụ: user@gmail.com)");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-            }
+                try
+                {
+                    string query = "INSERT INTO nguoidung (name, sdt, email, password) VALUES (@name, @sdt, @email, @password)";
+                    SqlCommand cmd = new SqlCommand(query, sqlCon);
+                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@sdt", sdt);
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+
+                    int rowAffected = cmd.ExecuteNonQuery();
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Đăng ký thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đăng ký thất bại");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }    
         }
 
+        private bool IsValidEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._%+-]+@gmail\.com$";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(email);
+        }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Login o = new Login();
