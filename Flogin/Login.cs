@@ -16,7 +16,7 @@ namespace Flogin
 {
     public partial class Login : Form
     {
-        string strCon = @"Data Source=DESKTOP-B3E8RSQ\SQLEXPRESS;Initial Catalog=CoffeeManagement;Integrated Security=True;";
+        string strCon = @"Data Source=DESKTOP-B3E8RSQ\SQLEXPRESS;Initial Catalog=quanlicaphe;Integrated Security=True;";
         SqlConnection sqlCon = null;
         public Login()
         {

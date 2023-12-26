@@ -9,3 +9,6 @@ D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Quan_cafe.csproj.CoreCompileInputs.c
 D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.exe
 D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.pdb
 D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.fRegister.resources
+D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.Fmain.resources
+D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.Fcustomer.resources
+D:\Work_space\C#\Quan_Cafe\Flogin\obj\Debug\Flogin.Facount.resources

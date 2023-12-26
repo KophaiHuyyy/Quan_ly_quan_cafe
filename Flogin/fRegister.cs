@@ -15,7 +15,7 @@ namespace Flogin
 {
     public partial class fRegister : Form
     {
-        string strCon = @"Data Source=DESKTOP-B3E8RSQ\SQLEXPRESS;Initial Catalog=CoffeeManagement;Integrated Security=True;";
+        string strCon = @"Data Source=DESKTOP-B3E8RSQ\SQLEXPRESS;Initial Catalog=quanlicaphe;Integrated Security=True;";
         SqlConnection sqlCon = null;
         public fRegister()
         {
@@ -63,6 +63,10 @@ namespace Flogin
                     if (rowAffected > 0)
                     {
                         MessageBox.Show("Đăng ký thành công!");
+                        Login o = new Login();
+                        this.Hide();
+                        o.ShowDialog();
+                        this.Show();
                     }
                     else
                     {
